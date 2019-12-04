@@ -1,5 +1,7 @@
 .idea/
 .gradle/
+.tmp/
 build/
 *.iml
 *.ipr
+*.lock

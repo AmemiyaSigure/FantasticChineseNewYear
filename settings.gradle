@@ -1,0 +1,3 @@
+rootProject.name = 'fantasticchinesenewyear'
+
+include 'fantasticchinesenewyear-common', 'fantasticchinesenewyear-spigot', 'fantasticchinesenewyear-sponge'

@@ -1,0 +1,7 @@
+name: FantasticChineseNewYear
+version: @version@
+main: cx.rain.mc.plugin.spigot.fantasticChineseNewYear.FantasticChineseNewYearSpigot
+prefix: Fantastic Chinese New Year
+load: STARTUP
+authors: [AmemiyaSigure]
+description: A Minecraft Bukkit Server Plugin with theme of Chinese New Year.
