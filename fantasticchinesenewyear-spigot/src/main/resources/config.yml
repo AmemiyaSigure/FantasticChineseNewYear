@@ -1,0 +1,37 @@
+# Plugin general settings.
+general:
+  debug: false
+
+# Plugin database settings.
+database:
+  # Data base type.
+  # Accept: MySql, Sqlite.
+  # Default: Sqlite.
+  type: "Sqlite"
+  # For Sqlite.
+  file: "data.db"
+  # For MySql.
+  host: "localhost"
+  port: 3306
+  user: "root"
+  password: ""
+  name: "FantasticChineseNewYear"
+
+# Plugin features settings.
+features:
+  # New Year red packet settings.
+  redPacket:
+    # If players can send red packet that every receiver can sharing gifts equally.
+    normal: true
+    # If players can send red packet that every receiver can sharing gifts randomly.
+    random: true
+    # If players can send red packet that only designated people can claim.
+    exclusive: true
+  # KongMing Lantern settings.
+  kongMingLantern:
+    # Can players build a multi-block structure that be a KongMing Lantern.
+    multiBlock: true
+    # Can player become a Kong Ming Lantern and fly to the sky.
+    player: true
+    # If only night can fly a Kong Ming Lantern.
+    onlyNight: true

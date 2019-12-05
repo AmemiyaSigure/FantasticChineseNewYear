@@ -6,20 +6,22 @@ import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.plugin.Plugin;
 
+import static cx.rain.mc.plugin.common.fantasticChineseNewYear.FantasticChineseNewYear.*;
+
 @Plugin(
-        id = "fantasticchinesenewyear",
-        name = "FantasticChineseNewYear",
-        description = "A Minecraft Bukkit Server Plugin with theme of Chinese New Year.",
+        id = PLUGIN_ID,
+        name = PLUGIN_NAME,
+        description = PLUGIN_DESCRIPTION,
         authors = {
-                "AmemiyaSigure"
+                PLUGIN_AUTHOR
         }
 )
 public class FantasticChineseNewYearSponge {
-
     @Inject
-    private Logger logger;
+    private Logger log;
 
     @Listener
     public void onServerStart(GameStartedServerEvent event) {
+        log.info("[Fantastic Chinese New Year] Plugin enabled.");
     }
 }
