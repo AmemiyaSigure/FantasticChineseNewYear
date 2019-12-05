@@ -1,20 +1,33 @@
 # Plugin general settings.
 general:
+  # Weather plugin shows debug info. Such as exception stacktrace.
   debug: false
+  # Which language that plugin used in console and game.
+  # Accept: en, zhcn
+  # Default: zhcn
+  # If you can translate it into more languages, i'd love to see a git pull request in
+  # https://github.com/AmemiyaSigure/FantasticChineseNewYear
+  language: "zhcn"
 
 # Plugin database settings.
 database:
   # Data base type.
-  # Accept: MySql, Sqlite.
-  # Default: Sqlite.
+  # Accept: MySql, Sqlite
+  # Default: Sqlite
   type: "Sqlite"
   # For Sqlite.
+  # Sqlite file name.
   file: "data.db"
   # For MySql.
+  # MySql host.
   host: "localhost"
+  # MySql port. Default: 3306.
   port: 3306
+  # MySql username.
   user: "root"
+  # MySql password.
   password: ""
+  # MySql database name. Default: FantasticChineseNewYear.
   name: "FantasticChineseNewYear"
 
 # Plugin features settings.

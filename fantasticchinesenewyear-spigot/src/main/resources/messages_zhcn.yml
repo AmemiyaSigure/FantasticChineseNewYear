@@ -1,0 +1,10 @@
+languages:
+  set: "语言已设置为：%s！"
+  chinese_simplified: "简体中文"
+  english: "英文"
+  no_such_key: "在语言文件中没有找到 %s 这个键！这可能是插件本身的问题，请尝试更新插件版本。"
+life_circle:
+  load_config: "正在加载配置文件。"
+  save_config: "正在保存配置文件。"
+  load_listeners: "正在注册监听器。"
+  load_commands: "正在注册指令。"

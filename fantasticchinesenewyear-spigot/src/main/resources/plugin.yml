@@ -1,7 +1,20 @@
 name: FantasticChineseNewYear
-version: @version@
+version: ${version}
 main: cx.rain.mc.plugin.spigot.fantasticChineseNewYear.FantasticChineseNewYearSpigot
 prefix: Fantastic Chinese New Year
 load: STARTUP
 authors: [AmemiyaSigure]
 description: A Minecraft Bukkit Server Plugin with theme of Chinese New Year.
+api-version: 1.13
+
+commands:
+  fantasticchinesenewyear:
+    description: Fantastic Chinese New Year Admin Command.
+    aliases:
+      - fcny
+  redpacket:
+    description: Send a red packet.
+    aliases:
+      - rp
+      - hb
+      - fhb

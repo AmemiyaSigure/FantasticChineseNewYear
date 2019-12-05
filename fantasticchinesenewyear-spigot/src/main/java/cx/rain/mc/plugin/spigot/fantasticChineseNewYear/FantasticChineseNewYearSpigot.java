@@ -1,6 +1,8 @@
 package cx.rain.mc.plugin.spigot.fantasticChineseNewYear;
 
-import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.listeners.Listeners;
+import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.Commands;
+import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.listener.Listeners;
+import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.util.I18n;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,32 +18,41 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
     private FileConfiguration config = null;
     private FileConfiguration messages = null;
 
+    private boolean hasLoad = false;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
         INSTANCE = this;
+        load(hasLoad);
+    }
 
-        log.info("Loading configs.");
-        saveDefaultConfig();
-        saveResource("messages.yml", false);
-        config = this.getConfig();
-        File messagesFile = new File(this.getDataFolder(), "messages.yml");
-        messages = YamlConfiguration.loadConfiguration(messagesFile);
+    private void load(boolean isReload) {
+        if (!isReload) {
+            hasLoad = true;
+        }
 
-        log.info("Registering events.");
+        loadConfigs(isReload);
+
+        log.info(I18n.format("life_circle.load_commands"));
+        new Commands();
+        log.info(I18n.format("life_circle.load_listeners"));
         new Listeners();
+    }
+
+    private void loadConfigs(boolean isReload) {
+        // Put the log message in last for prevent loop.
+        saveDefaultConfig();
+        config = this.getConfig();
+        I18n.loadMessages(config.getString("general.language"));
+        log.info(I18n.format("life_circle.load_config"));
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        log.info("Saving configs.");
-        saveConfig();
-        try {
-            messages.save("messages.yml");
-        } catch (IOException ex) {
-
-        }
+        log.info(I18n.format("life_circle.save_config"));
+        //saveConfig();
     }
 
     public static FantasticChineseNewYearSpigot getInstance() {
@@ -58,5 +69,9 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
 
     public FileConfiguration getMessages() {
         return messages;
+    }
+
+    public void setMessages(FileConfiguration messages) {
+        this.messages = messages;
     }
 }
