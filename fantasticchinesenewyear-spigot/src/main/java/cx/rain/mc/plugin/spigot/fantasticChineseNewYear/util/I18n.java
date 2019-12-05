@@ -8,10 +8,11 @@ import java.io.File;
 import java.util.logging.Logger;
 
 public class I18n {
+    public static Language language = Language.zhcn;
     public static void loadMessages(String lang) {
         FantasticChineseNewYearSpigot instance = FantasticChineseNewYearSpigot.getInstance();
         Logger log = instance.getLog();
-        Language language = Language.valueOf(lang);
+        language = Language.valueOf(lang);
         if (!new File(instance.getDataFolder(), language.file).exists()) {
             instance.saveResource(language.file, false);
         }
@@ -26,7 +27,7 @@ public class I18n {
         }
         FileConfiguration messages = FantasticChineseNewYearSpigot.getInstance().getMessages();
         if (!messages.isSet(key)) {
-            throw new IllegalArgumentException(I18n.format("language.no_such_key", key));
+            throw new IllegalArgumentException(I18n.format("language.no_such_key", key, language.file));
         }
         String format = messages.getString(key);
         return String.format(format, args);

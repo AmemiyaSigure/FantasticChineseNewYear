@@ -2,9 +2,16 @@ languages:
   set: "语言已设置为：%s！"
   chinese_simplified: "简体中文"
   english: "英文"
-  no_such_key: "在语言文件中没有找到 %s 这个键！这可能是插件本身的问题，请尝试更新插件版本。"
+  no_such_key: "在语言文件中没有找到 %s 这个键！这可能编辑语言文件导致的，请尝试删除语言文件 %s 。"
 life_circle:
   load_config: "正在加载配置文件。"
   save_config: "正在保存配置文件。"
   load_listeners: "正在注册监听器。"
   load_commands: "正在注册指令。"
+permission:
+  deny: "&c你没有执行该命令的权限！"
+command_usage:
+  redpacket: "/redpacket <putong|kouling|zhuanshu> <item|money|points>"
+  redpacket_putong: "/redpacket putong <item|money|points>"
+  redpacket_kouling: "/redpacket kouling <item|money|points>"
+  redpacket_zhuanshu: "/redpacket zhuanshu <item|money|points>"

@@ -18,3 +18,10 @@ commands:
       - rp
       - hb
       - fhb
+permissions:
+  fantasticchinesenewyear.redpacket.use:
+    description: Use /redpacket command.
+    default: not op
+    children:
+      fantasticchinesenewyear.redpacket.make: true
+      fantasticchinesenewyear.redpacket.claim: true

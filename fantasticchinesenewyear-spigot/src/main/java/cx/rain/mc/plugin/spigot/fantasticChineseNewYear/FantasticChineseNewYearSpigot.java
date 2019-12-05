@@ -4,11 +4,8 @@ import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.Commands;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.listener.Listeners;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.util.I18n;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.logging.Logger;
 
 public final class FantasticChineseNewYearSpigot extends JavaPlugin {
