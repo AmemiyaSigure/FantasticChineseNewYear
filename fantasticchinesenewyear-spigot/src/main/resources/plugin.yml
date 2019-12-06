@@ -13,15 +13,46 @@ commands:
     aliases:
       - fcny
   redpacket:
-    description: Send a red packet.
+    description: Manage sent red packet.
     aliases:
       - rp
       - hb
       - fhb
+  zhuanshuhongbao:
+    description: Send a exclusive red packet.
+    aliases:
+      - zshb
+  putonghongbao:
+    description: Send a normal red packet.
+    aliases:
+      - pthb
+  koulinghongbao:
+    description: Send a password red packet.
+    aliases:
+      - klhb
+  pinshouqihongbao:
+    description: Send a random red packet.
+    aliases:
+      - psqhb
 permissions:
+  fantasticchinesenewyear.*:
+    description: Use all of this plugin command.
+    default: op
   fantasticchinesenewyear.redpacket.use:
     description: Use /redpacket command.
     default: not op
     children:
       fantasticchinesenewyear.redpacket.make: true
       fantasticchinesenewyear.redpacket.claim: true
+  fantasticchinesenewyear.redpacket.exclusive:
+    description: Use /zhuanshuhongbao command.
+    default: not op
+  fantasticchinesenewyear.redpacket.normal:
+    description: Use /putonghongbao command.
+    default: not op
+  fantasticchinesenewyear.redpacket.password:
+    description: Use /koulinghongbao command.
+    default: not op
+  fantasticchinesenewyear.redpacket.random:
+    description: Use /pinshouqihongbao command.
+    default: not op

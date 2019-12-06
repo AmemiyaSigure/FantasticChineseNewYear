@@ -28,23 +28,28 @@ database:
   # MySql password.
   password: ""
   # MySql database name. Default: FantasticChineseNewYear.
-  name: "FantasticChineseNewYear"
+  name: "fantasticchinesenewyear"
 
 # Plugin features settings.
 features:
   # New Year red packet settings.
   redPacket:
-    # If players can send red packet that every receiver can sharing gifts equally.
-    normal: true
-    # If players can send red packet that every receiver can sharing gifts randomly.
-    random: true
-    # If players can send red packet that only designated people can claim.
-    exclusive: true
+    # Can players send red packet that only designated people can claim.
+    zhuanshu: true
+    # Can players send red packet that every receiver can sharing gifts equally.
+    putong: true
+    # Can players send red packet that receiver should say the password of the red packet as chat message.
+    kouling: true
+    # Can players send red packet that every receiver can sharing gifts randomly.
+    pinshouqi: true
+    # Red packet expire time since be sent.
+    # Unit: second.
+    expire: 86400
   # KongMing Lantern settings.
   kongMingLantern:
     # Can players build a multi-block structure that be a KongMing Lantern.
     multiBlock: true
     # Can player become a Kong Ming Lantern and fly to the sky.
     player: true
-    # If only night can fly a Kong Ming Lantern.
+    # Can players fly a Kong Ming Lantern at night only.
     onlyNight: true

@@ -1,6 +1,6 @@
 package cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command;
 
-import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.util.I18n;
+import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.common.ShowMessage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,30 +9,26 @@ public class CommandRedPacket implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("fantasticchinesenewyear.redpacket.use")) {
-            showNoPermission(sender);
+            ShowMessage.noPermission(sender);
         }
 
         if (args.length >= 1) {
             switch (args[0]) {
-                case "putong":
+                case "help":
+                    ShowMessage.helpRedPacket(sender);
                     break;
-                case "kouling":
-                    break;
-                case "zhuanshu":
-                    if (args.length == 2)
+                case "history":
+                    if (args.length == 2) {
+                        ShowMessage.helpRedPacketHistory();
+                    }
                     break;
                 default:
-                    showUsage(sender);
+                    ShowMessage.usageRedPacket(sender);
+                    break;
             }
         }
         return true;
     }
 
-    private void showNoPermission(CommandSender sender) {
-        sender.sendMessage(I18n.format("permission.deny"));
-    }
 
-    private void showUsage(CommandSender sender) {
-        sender.sendMessage(I18n.format("command_usage.redpacket"));
-    }
 }

@@ -1,1 +1,19 @@
-# Todo
+languages:
+  set: "Language is set to: %s!"
+  chinese_simplified: "Chinese Simplified"
+  english: "English"
+  no_such_key: "There is no key named %s in language file! It may caused by edit the language file manually, try to delete the file named %s ."
+life_circle:
+  load_config: "Loading configs."
+  save_config: "Saving configs."
+  load_listeners: "Registering listeners."
+  load_commands: "Registering commands."
+permission:
+  deny: "&cYou have no permission to use this command."
+command_usage:
+  redpacket: "/redpacket <putong|kouling|zhuanshu> <item|money|points>"
+  redpacket_putong: "/redpacket putong <item|money|points>"
+  redpacket_kouling: "/redpacket kouling <item|money|points>"
+  redpacket_zhuanshu: "/redpacket zhuanshu <item|money|points>"
+
+  # Todo
