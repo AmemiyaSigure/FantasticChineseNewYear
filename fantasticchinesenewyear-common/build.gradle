@@ -1,0 +1,7 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.mybatis:mybatis:3.5.3'
+}

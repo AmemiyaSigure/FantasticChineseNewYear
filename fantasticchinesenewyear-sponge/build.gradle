@@ -9,9 +9,3 @@ dependencies {
 }
 
 sponge.plugin.id = pluginId
-
-shadowJar {
-    dependencies {
-        include(dependency(':fantasticchinesenewyear-common'))
-    }
-}

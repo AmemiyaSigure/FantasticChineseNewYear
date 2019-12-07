@@ -15,9 +15,11 @@ database:
   # Accept: MySql, Sqlite
   # Default: Sqlite
   type: "Sqlite"
+
   # For Sqlite.
   # Sqlite file name.
   file: "data.db"
+
   # For MySql.
   # MySql host.
   host: "localhost"
@@ -29,6 +31,10 @@ database:
   password: ""
   # MySql database name. Default: FantasticChineseNewYear.
   name: "fantasticchinesenewyear"
+  # If you using MySql 8.0 or newer, set it true.
+  mysql80: false
+  # Set it true to use ssl in mysql connection.
+  useSsl: false
 
 # Plugin features settings.
 features:

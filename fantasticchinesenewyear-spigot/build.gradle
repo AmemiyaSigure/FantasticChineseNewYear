@@ -22,9 +22,3 @@ processResources {
         expand 'version': project.version
     }
 }
-
-shadowJar {
-    dependencies {
-        include(dependency(':fantasticchinesenewyear-common'))
-    }
-}

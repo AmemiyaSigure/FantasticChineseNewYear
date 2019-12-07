@@ -26,6 +26,8 @@ public class CommandRedPacket implements CommandExecutor {
                     ShowMessage.usageRedPacket(sender);
                     break;
             }
+        } else {
+            ShowMessage.usageRedPacket(sender);
         }
         return true;
     }

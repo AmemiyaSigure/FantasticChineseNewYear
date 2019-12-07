@@ -1,5 +1,6 @@
 package cx.rain.mc.plugin.spigot.fantasticChineseNewYear;
 
+import cx.rain.mc.plugin.common.fantasticChineseNewYear.util.enumerate.DatabaseType;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.Commands;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.listener.Listeners;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.util.I18n;

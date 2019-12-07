@@ -4,8 +4,22 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
     }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+dependencies {
+    compile project(':fantasticchinesenewyear-common')
+    compile project(':fantasticchinesenewyear-spigot')
+    compile project(':fantasticchinesenewyear-sponge')
 }
 
 subprojects {
