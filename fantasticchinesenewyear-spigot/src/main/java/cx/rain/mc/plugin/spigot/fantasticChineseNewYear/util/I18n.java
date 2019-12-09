@@ -14,6 +14,9 @@ public class I18n {
     public static void loadMessages(String lang) {
         language = Language.valueOf(lang);
         internalLoad();
+        FantasticChineseNewYearSpigot.getInstance().getLog().info(
+                I18n.format("languages.set", I18n.format(language.getDescription()))
+        );
     }
 
     private static void internalLoad() {
@@ -24,7 +27,6 @@ public class I18n {
         }
         File messagesFile = new File(instance.getDataFolder(), language.getFile());
         instance.setMessages(YamlConfiguration.loadConfiguration(messagesFile));
-        log.info(I18n.format("languages.set", I18n.format(language.getDescription())));
     }
 
     public static String format(String key, Object... args) {
@@ -37,6 +39,7 @@ public class I18n {
             File file = new File(FantasticChineseNewYearSpigot.getInstance().getDataFolder(), language.getFile());
             if (file.exists()) {
                 file.delete();
+                internalLoad();
             }
             FantasticChineseNewYearSpigot.getInstance().getLog().log(Level.WARNING, I18n.format("language.missing", key));
         }

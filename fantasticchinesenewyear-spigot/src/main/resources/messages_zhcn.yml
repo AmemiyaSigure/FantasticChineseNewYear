@@ -1,8 +1,14 @@
 life_circle:
   load_config: "正在加载配置文件……"
   save_config: "正在保存配置文件……"
+  load_database: "正在连接数据库……"
+  test_database: "正在测试数据库连接……"
   load_listeners: "正在注册监听器……"
   load_commands: "正在注册指令……"
+
+exception:
+  test_database: "测试数据库连接失败！"
+  database: "数据库连接失败！"
 
 languages:
   set: "语言已设置为：%s！"
