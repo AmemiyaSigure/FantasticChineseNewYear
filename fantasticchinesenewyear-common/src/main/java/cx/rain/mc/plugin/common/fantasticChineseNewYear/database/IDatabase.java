@@ -8,5 +8,5 @@ import java.sql.SQLException;
 public interface IDatabase {
     BasicDataSource getDataSource();
     Connection getConnection() throws SQLException;
-    void Dispose();
+    void dispose();
 }

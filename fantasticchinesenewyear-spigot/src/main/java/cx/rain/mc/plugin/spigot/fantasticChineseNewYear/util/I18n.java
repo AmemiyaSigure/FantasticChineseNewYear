@@ -7,7 +7,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class I18n {
     public static Language language = Language.zhcn;
@@ -21,7 +20,6 @@ public class I18n {
 
     private static void internalLoad() {
         FantasticChineseNewYearSpigot instance = FantasticChineseNewYearSpigot.getInstance();
-        Logger log = instance.getLog();
         if (!new File(instance.getDataFolder(), language.getFile()).exists()) {
             instance.saveResource(language.getFile(), false);
         }
@@ -39,9 +37,10 @@ public class I18n {
             File file = new File(FantasticChineseNewYearSpigot.getInstance().getDataFolder(), language.getFile());
             if (file.exists()) {
                 file.delete();
-                internalLoad();
             }
-            FantasticChineseNewYearSpigot.getInstance().getLog().log(Level.WARNING, I18n.format("language.missing", key));
+            internalLoad();
+            FantasticChineseNewYearSpigot.getInstance().getLog().log(Level.WARNING, I18n.format("languages.missing", key));
+            messages = FantasticChineseNewYearSpigot.getInstance().getMessages();
         }
         String format = messages.getString(key);
         return String.format(format, args);

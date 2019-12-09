@@ -68,7 +68,15 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
             db.getConnection().close();
         } catch (SQLException ex) {
             log.log(Level.SEVERE, I18n.format("exception.test_database"));
-            System.err.println(ex);
+            ex.printStackTrace();
+        }
+
+        log.info(I18n.format("life_circle.init_database"));
+        try {
+            db.initializeDatabase();
+        } catch (SQLException ex) {
+            log.log(Level.SEVERE, I18n.format("exception.init_database"));
+            ex.printStackTrace();
         }
     }
 
@@ -78,7 +86,10 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         log.info(I18n.format("life_circle.save_config"));
         // Fixme: Comment in config will lost.
         //saveConfig();
-
+        log.info(I18n.format("life_circle.close_database"));
+        if (db != null) {
+            db.dispose();
+        }
     }
 
     public static FantasticChineseNewYearSpigot getInstance() {

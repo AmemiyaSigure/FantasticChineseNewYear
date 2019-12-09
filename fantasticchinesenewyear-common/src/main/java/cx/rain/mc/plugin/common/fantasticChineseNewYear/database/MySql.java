@@ -31,7 +31,7 @@ public class MySql implements IDatabase {
         return dataSource.getConnection();
     }
 
-    public void Dispose() {
+    public void dispose() {
         if (!dataSource.isClosed()) {
             try {
                 dataSource.close();
