@@ -11,10 +11,12 @@ public class Database {
     private DatabaseType type = null;
     private IDatabase db = null;
 
-    private static HashMap<String, String> tables = new HashMap<>();
+    private static HashMap<String, String> tablesMySql = new HashMap<>();
+    private static HashMap<String, String> tablesSqlite = new HashMap<>();
 
+    // Fixme: Bad implement to init different type of database.
     static {
-        tables.put("redpackets",
+        tablesMySql.put("redpackets",
                 "create table if not exists `redpackets` (" +
                         "`Id` int(11) not null auto_increment," +
                         "`SenderUuid` text not null," +
@@ -30,7 +32,25 @@ public class Database {
                         "`Password` text null," +
                         "`ClaimPlayersAndRewards` text not null," +
                         "primary key (`Id`)" +
-                        ") engine = InnoDB auto_increment = 1"
+                        ") engine = InnoDB auto_increment = 1;"
+        );
+
+        tablesSqlite.put("redpackets",
+                "create table if not exists `redpackets` (" +
+                        "`Id` integer primary key autoincrement not null," +
+                        "`SenderUuid` text not null," +
+                        "`SendTime` bigint(20) not null," +
+                        "`ExpireTime` bigint(20) not null," +
+                        "`RedPacketType` tinyint(1) not null," +
+                        "`RewardType` tinyint(1) not null," +
+                        "`Items` text null," +
+                        "`Money` double null default null," +
+                        "`Points` double null default null," +
+                        "`Amount` int(11) null default null," +
+                        "`ReceiverPlayerUuid` text null," +
+                        "`Password` text null," +
+                        "`ClaimPlayersAndRewards` text not null" +
+                        ");"
         );
     }
 
@@ -58,10 +78,17 @@ public class Database {
 
     public boolean isDatabaseInitialized() throws SQLException {
         ArrayList<String> tableExists = new ArrayList<>();
-        ArrayList<String> tableNames = new ArrayList<>(tables.keySet());
+        ArrayList<String> tableNames = new ArrayList<>(tablesMySql.keySet());
 
         Statement st =  getConnection().createStatement();
-        ResultSet rs = st.executeQuery("show tables;");
+        ResultSet rs = null;
+        if (type == DatabaseType.MySql) {
+            rs = st.executeQuery("show tables;");
+        } else if (type == DatabaseType.Sqlite) {
+            rs = st.executeQuery(
+                    "select `name` from `sqlite_master` where `type` = 'table' and `name` not like 'sqlite_%';"
+            );
+        }
         while (rs.next()) {
             tableExists.add(rs.getString(1));
         }
@@ -75,8 +102,7 @@ public class Database {
     }
 
     public void initializeDatabase() throws SQLException {
-        if (!isDatabaseInitialized()) {
-            // Todo: Clear old struct?
+        // Todo: Clear old struct?
             /*
             for (String s : tables.keySet()) {
                 PreparedStatement ps = getConnection().prepareStatement("drop table if exists `" + s + "`;");
@@ -85,7 +111,15 @@ public class Database {
             }
              */
 
-            for (String s : tables.values()) {
+        // Fixme: Bad implement to init different type of database.
+        if (type == DatabaseType.MySql) {
+            for (String s : tablesMySql.values()) {
+                PreparedStatement ps = getConnection().prepareStatement(s);
+                ps.execute();
+                ps.close();
+            }
+        } else if (type == DatabaseType.Sqlite) {
+            for (String s : tablesSqlite.values()) {
                 PreparedStatement ps = getConnection().prepareStatement(s);
                 ps.execute();
                 ps.close();

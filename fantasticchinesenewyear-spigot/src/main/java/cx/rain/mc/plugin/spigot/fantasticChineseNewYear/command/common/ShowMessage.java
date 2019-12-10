@@ -8,20 +8,15 @@ public class ShowMessage {
         sender.sendMessage(I18n.format("permission.deny"));
     }
 
-    public static  void usageRedPacket(CommandSender sender) {
-        sender.sendMessage(I18n.format("command_usage.redpacket"));
+    public static void notPlayer(CommandSender sender) {
+        sender.sendMessage(I18n.format("commands.error.not_player"));
     }
 
-    public static void helpRedPacket(CommandSender sender) {
-        sender.sendMessage(I18n.format("help.redpacket"));
-        sender.sendMessage(I18n.format("help.redpacket_2"));
-        sender.sendMessage(I18n.format("help.redpacket_3"));
-        sender.sendMessage(I18n.format("help.redpacket_4"));
-        sender.sendMessage(I18n.format("help.redpacket_5"));
-        sender.sendMessage(I18n.format("help.redpacket_6"));
+    public static void notInteger(CommandSender sender) {
+        sender.sendMessage(I18n.format("commands.error.not_integer"));
     }
 
-    public static void helpRedPacketHistory() {
-
+    public static void notIntegerAt(CommandSender sender, int at) {
+        sender.sendMessage(I18n.format("commands.error.not_integer_at", at));
     }
 }

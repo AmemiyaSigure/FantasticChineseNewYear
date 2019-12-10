@@ -9,7 +9,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class FantasticChineseNewYearSpigot extends JavaPlugin {
@@ -38,10 +37,19 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         loadDatabase();
 
         log.info(I18n.format("life_circle.load_commands"));
-        new Commands();
+        new Commands(log, db);
         log.info(I18n.format("life_circle.load_listeners"));
-        new Listeners();
+        new Listeners(log, db);
     }
+
+    /*
+    private BinderModule loadDI() {
+        BinderModule module = new BinderModule(this);
+        Injector injector = module.createInjector();
+        injector.injectMembers(this);
+        return module;
+    }
+     */
 
     private void loadConfigs() {
         // Put the log message in last for prevent loop.
@@ -67,15 +75,17 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         try {
             db.getConnection().close();
         } catch (SQLException ex) {
-            log.log(Level.SEVERE, I18n.format("exception.test_database"));
+            log.severe(I18n.format("exception.test_database"));
             ex.printStackTrace();
         }
 
-        log.info(I18n.format("life_circle.init_database"));
         try {
-            db.initializeDatabase();
+            if (!db.isDatabaseInitialized()) {
+                log.warning(I18n.format("life_circle.init_database"));
+                db.initializeDatabase();
+            }
         } catch (SQLException ex) {
-            log.log(Level.SEVERE, I18n.format("exception.init_database"));
+            log.severe(I18n.format("exception.init_database"));
             ex.printStackTrace();
         }
     }

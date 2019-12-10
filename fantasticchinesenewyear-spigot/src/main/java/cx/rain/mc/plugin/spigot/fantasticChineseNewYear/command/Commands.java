@@ -1,9 +1,12 @@
 package cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command;
 
+import cx.rain.mc.plugin.common.fantasticChineseNewYear.database.Database;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.completer.CompleterFantasticChineseNewYear;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.completer.CompleterRedPacket;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
+
+import java.util.logging.Logger;
 
 public class Commands {
     protected static PluginCommand redpacket;
@@ -13,9 +16,9 @@ public class Commands {
     protected static PluginCommand redpacketRandom;
     protected static PluginCommand fantasticChineseNewYear;
 
-    public Commands() {
+    public Commands(Logger log, Database db) {
         redpacket = Bukkit.getPluginCommand("redpacket");
-        redpacket.setExecutor(new CommandRedPacket());
+        redpacket.setExecutor(new CommandRedPacket(log, db));
         redpacket.setTabCompleter(new CompleterRedPacket());
 
         redpacketExclusive = Bukkit.getPluginCommand("zhuanshuhongbao");

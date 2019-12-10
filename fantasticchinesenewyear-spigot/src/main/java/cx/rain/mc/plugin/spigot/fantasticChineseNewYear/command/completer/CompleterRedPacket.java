@@ -20,6 +20,6 @@ public class CompleterRedPacket implements TabCompleter {
             completes.add("money");
             completes.add("points");
         }
-        return completes;
+        return null;
     }
 }

@@ -20,9 +20,23 @@ languages:
   missing: "在语言文件中没有找到 %s 这个键！这可能手动编辑语言文件导致的，语言文件已重置。"
 
 permission:
-  deny: "&c你没有执行该命令的权限！"
+  deny: "§c你没有执行该命令的权限！"
 
-command_usage:
+commands:
+  error:
+    not_player: "§c这个命令只有玩家使用才有效。"
+    not_integer: "§c请输入整数！"
+    not_integer_at: "§c请于第%s个参数中输入整数！"
+    database: "§c数据库连接失败，请联系服务器管理员！"
+
+  # Show on use /redpacket history
+  redpacket_history_usage: "§6[新年红包]§b使用 §f/redpacket history [页数] §b查看红包记录。"
+  redpacket_history_head: "§6[新年红包]§b----------以下是红包历史 [%s/%s]----------"
+  redpacket_history_body: "§6[新年红包]§r发送时间：%s|发送份数：%s|领取份数：%s"
+  redpacket_history_foot: "§6[新年红包]§b----------以上是红包历史 [%s/%s]----------"
+  redpacket_history_empty: "§6[新年红包]§b你还没有红包记录呢！"
+  redpacket_history_page_empty: "§6[新年红包]§b这一页还没有红包记录呢！"
+
   redpacket: "/redpacket <help|history>"
   redpacket_history: "/redpacket history [page]"
   redpacket_exclusive: "/zhuanshuhongbao <item|money|points> <Player>"
@@ -32,15 +46,10 @@ command_usage:
 
 help:
   # Show on use /redpacket
-  redpacket: "&e[新年红包]&b欢迎使用 &d&lFantasticChineseNewYear &b插件！"
-  redpacket_2: "&e[新年红包]&b使用 &f/redpacket history &b查看发送红包的记录和领取情况；"
-  redpacket_3: "&e[新年红包]&b使用 &f/zhuanshuhongbao &b发送专属红包；"
-  redpacket_4: "&e[新年红包]&b使用 &f/putonghongbao &b发送普通红包；"
-  redpacket_5: "&e[新年红包]&b使用 &f/koulinghongbao &b发送口令红包；"
-  redpacket_6: "&e[新年红包]&b使用 &f/pinshouqihongbao &b发送拼手气红包。"
-
-  # Show on use /redpacket history
-  redpacket_history_head: "&e[新年红包]&b----------以下是红包历史----------"
-  redpacket_history_body: "发送时间：%s|发送份数：%s|领取份数：%s"
-  redpacket_history_foot: "&e[新年红包]&b----------以上是红包历史----------"
-  redpacket_history_foot_2: "&e[新年红包]&b使用 &f/redpacket history [页数] &b查看其他页的红包记录。"
+  redpacket: "§6[新年红包]§b欢迎使用 §d§lFantasticChineseNewYear §b插件！"
+  redpacket_2: "§6[新年红包]§b使用 §f/redpacket help §b显示此帮助；"
+  redpacket_3: "§6[新年红包]§b使用 §f/redpacket history §b查看发送红包的记录和领取情况；"
+  redpacket_4: "§6[新年红包]§b使用 §f/zhuanshuhongbao (/zshb) §b发送专属红包；"
+  redpacket_5: "§6[新年红包]§b使用 §f/putonghongbao (/pthb) §b发送普通红包；"
+  redpacket_6: "§6[新年红包]§b使用 §f/koulinghongbao (/klhb) §b发送口令红包；"
+  redpacket_7: "§6[新年红包]§b使用 §f/pinshouqihongbao (/psqhb) §b发送拼手气红包。"

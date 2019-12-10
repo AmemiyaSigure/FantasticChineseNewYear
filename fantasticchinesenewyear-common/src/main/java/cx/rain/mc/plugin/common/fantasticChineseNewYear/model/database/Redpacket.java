@@ -1,15 +1,12 @@
-package cx.rain.mc.plugin.common.fantasticChineseNewYear.entity;
+package cx.rain.mc.plugin.common.fantasticChineseNewYear.model.database;
 
-import cx.rain.mc.plugin.common.fantasticChineseNewYear.util.enumerate.RedPacketType;
-import cx.rain.mc.plugin.common.fantasticChineseNewYear.util.enumerate.RewardType;
-
-public class Redpackets {
+public class Redpacket {
     private int Id;
     private String SenderUuid;
     private long SendTime;
     private long ExpireTime;
-    private RedPacketType RedPacketType;
-    private RewardType RewardType;
+    private int RedPacketType;
+    private int RewardType;
     private String Items;
     private double Money;
     private double Points;
@@ -50,19 +47,19 @@ public class Redpackets {
         ExpireTime = expireTime;
     }
 
-    public RedPacketType getRedPacketType() {
+    public int getRedPacketType() {
         return RedPacketType;
     }
 
-    public void setRedPacketType(RedPacketType redPacketType) {
+    public void setRedPacketType(int redPacketType) {
         RedPacketType = redPacketType;
     }
 
-    public RewardType getRewardType() {
+    public int getRewardType() {
         return RewardType;
     }
 
-    public void setRewardType(RewardType rewardType) {
+    public void setRewardType(int rewardType) {
         RewardType = rewardType;
     }
 

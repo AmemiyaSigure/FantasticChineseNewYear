@@ -39,7 +39,7 @@ public class I18n {
                 file.delete();
             }
             internalLoad();
-            FantasticChineseNewYearSpigot.getInstance().getLog().log(Level.WARNING, I18n.format("languages.missing", key));
+            FantasticChineseNewYearSpigot.getInstance().getLog().warning(I18n.format("languages.missing", key));
             messages = FantasticChineseNewYearSpigot.getInstance().getMessages();
         }
         String format = messages.getString(key);
