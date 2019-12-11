@@ -11,6 +11,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
@@ -108,10 +109,12 @@ public class CommandRedPacket implements CommandExecutor {
                 return;
             }
 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
             sender.sendMessage(I18n.format("commands.redpacket_history_head", page, pages));
             for (RedpacketParsed r : rps) {
                 sender.sendMessage(I18n.format("commands.redpacket_history_body",
-                        r.getSendTime(), r.getAmount(), r.getClaimPlayersAndRewards().length));
+                        r.getName(), sdf.format(r.getSendTime()), r.getAmount(), r.getClaimPlayersAndRewards().length));
             }
             sender.sendMessage(I18n.format("commands.redpacket_history_foot", page, pages));
         }

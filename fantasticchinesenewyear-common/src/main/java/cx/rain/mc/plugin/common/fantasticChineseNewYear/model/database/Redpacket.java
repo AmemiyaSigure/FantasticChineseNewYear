@@ -2,6 +2,7 @@ package cx.rain.mc.plugin.common.fantasticChineseNewYear.model.database;
 
 public class Redpacket {
     private int Id;
+    private String Name;
     private String SenderUuid;
     private long SendTime;
     private long ExpireTime;
@@ -21,6 +22,14 @@ public class Redpacket {
 
     public void setId(int id) {
         Id = id;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public String getSenderUuid() {

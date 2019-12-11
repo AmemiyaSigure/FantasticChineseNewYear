@@ -8,6 +8,7 @@ import cx.rain.mc.plugin.common.fantasticChineseNewYear.util.enumerate.RewardTyp
 import java.util.Date;
 
 public class RedpacketParsed {
+    private String Name;
     private Player Sender;
     private Date SendTime;
     private Date ExpireTime;
@@ -26,6 +27,7 @@ public class RedpacketParsed {
         Gson gson = new Gson();
 
         RedpacketParsed rp = new RedpacketParsed();
+        rp.setName(r.getName());
         rp.setSender(Player.parse(r.getSenderUuid()));
         rp.setSendTime(new Date(r.getSendTime()));
         rp.setExpireTime(new Date(r.getExpireTime()));
@@ -57,6 +59,14 @@ public class RedpacketParsed {
 
         rp.setClaimPlayersAndRewards(gson.fromJson(r.getClaimPlayersAndRewards(), RedpacketClaim[].class));
         return rp;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public Player getSender() {

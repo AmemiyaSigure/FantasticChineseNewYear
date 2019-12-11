@@ -3,6 +3,7 @@ package cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command;
 import cx.rain.mc.plugin.common.fantasticChineseNewYear.database.Database;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.completer.CompleterFantasticChineseNewYear;
 import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.command.completer.CompleterRedPacket;
+import cx.rain.mc.plugin.spigot.fantasticChineseNewYear.util.I18n;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 
@@ -21,14 +22,14 @@ public class Commands {
         redpacket.setExecutor(new CommandRedPacket(log, db));
         redpacket.setTabCompleter(new CompleterRedPacket());
 
-        redpacketExclusive = Bukkit.getPluginCommand("zhuanshuhongbao");
-        redpacketExclusive.setExecutor(new CommandRedPacketExclusive());
         redpacketNormal = Bukkit.getPluginCommand("putonghongbao");
         redpacketNormal.setExecutor(new CommandRedPacketNormal());
-        redpacketPassword = Bukkit.getPluginCommand("koulinghongbao");
-        redpacketPassword.setExecutor(new CommandRedPacketPassword());
         redpacketRandom = Bukkit.getPluginCommand("pinshouqihongbao");
         redpacketRandom.setExecutor(new CommandRedPacketRandom());
+        redpacketPassword = Bukkit.getPluginCommand("koulinghongbao");
+        redpacketPassword.setExecutor(new CommandRedPacketPassword());
+        redpacketExclusive = Bukkit.getPluginCommand("zhuanshuhongbao");
+        redpacketExclusive.setExecutor(new CommandRedPacketExclusive());
 
         fantasticChineseNewYear = Bukkit.getPluginCommand("fantasticchinesenewyear");
         fantasticChineseNewYear.setExecutor(new CommandFantasticChineseNewYear());

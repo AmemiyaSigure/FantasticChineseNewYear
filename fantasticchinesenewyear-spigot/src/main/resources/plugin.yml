@@ -18,22 +18,23 @@ commands:
       - rp
       - hb
       - fhb
-  zhuanshuhongbao:
-    description: Send a exclusive red packet.
-    aliases:
-      - zshb
   putonghongbao:
     description: Send a normal red packet.
     aliases:
       - pthb
-  koulinghongbao:
-    description: Send a password red packet.
-    aliases:
-      - klhb
   pinshouqihongbao:
     description: Send a random red packet.
     aliases:
       - psqhb
+  koulinghongbao:
+    description: Send a password red packet.
+    aliases:
+      - klhb
+  zhuanshuhongbao:
+    description: Send a exclusive red packet.
+    aliases:
+      - zshb
+
 permissions:
   fantasticchinesenewyear.*:
     description: Use all of this plugin command.

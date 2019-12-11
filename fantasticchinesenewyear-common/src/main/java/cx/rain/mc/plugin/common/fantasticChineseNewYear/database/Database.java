@@ -19,6 +19,7 @@ public class Database {
         tablesMySql.put("redpackets",
                 "create table if not exists `redpackets` (" +
                         "`Id` int(11) not null auto_increment," +
+                        "`Name` text not null," +
                         "`SenderUuid` text not null," +
                         "`SendTime` bigint(20) not null," +
                         "`ExpireTime` bigint(20) not null," +
@@ -38,6 +39,7 @@ public class Database {
         tablesSqlite.put("redpackets",
                 "create table if not exists `redpackets` (" +
                         "`Id` integer primary key autoincrement not null," +
+                        "`Name` text not null," +
                         "`SenderUuid` text not null," +
                         "`SendTime` bigint(20) not null," +
                         "`ExpireTime` bigint(20) not null," +

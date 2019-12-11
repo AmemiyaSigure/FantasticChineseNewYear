@@ -11,15 +11,10 @@ public class CompleterRedPacket implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         ArrayList<String> completes = new ArrayList<>();
-        if (args.length == 0) {
-            completes.add("putong");
-            completes.add("kouling");
-            completes.add("zhuanshu");
-        } else if (args.length == 1) {
-            completes.add("item");
-            completes.add("money");
-            completes.add("points");
+        if (args.length == 1) {
+            completes.add("help");
+            completes.add("history");
         }
-        return null;
+        return completes;
     }
 }
