@@ -7,10 +7,17 @@ repositories {
         name = 'sonatype'
         url = 'https://oss.sonatype.org/content/groups/public/'
     }
+    /*
+    maven {
+        name = 'Dakani Nexus Repo'
+        url = 'https://repo.dakanilabs.com/repository/maven-public'
+    }
+     */
 }
 
 dependencies {
     compile project(':fantasticchinesenewyear-common')
+    //compileOnly group: 'org.black_ixx', name: 'PlayerPoints', version: '2.1.3'
     compileOnly 'org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT'
 }
 

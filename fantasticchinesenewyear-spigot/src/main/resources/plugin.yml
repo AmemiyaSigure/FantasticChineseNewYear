@@ -1,8 +1,10 @@
 name: FantasticChineseNewYear
 version: ${version}
-main: cx.rain.mc.plugin.spigot.fantasticChineseNewYear.FantasticChineseNewYearSpigot
+main: cx.rain.mc.plugin.fantasticChineseNewYear.spigot.FantasticChineseNewYearSpigot
 prefix: FantasticChineseNewYear
 load: STARTUP
+softdepend:
+  - PlayerPoints
 authors: [AmemiyaSigure]
 description: A Minecraft Bukkit Server Plugin with theme of Chinese New Year.
 api-version: 1.13
@@ -18,22 +20,31 @@ commands:
       - rp
       - hb
       - fhb
-  putonghongbao:
+  redpacketclaim:
+    description: Claim a red packet.
+    aliases:
+      - rpclaim
+      - lhb
+  redpacketnormal:
     description: Send a normal red packet.
     aliases:
       - pthb
-  pinshouqihongbao:
+      - putonghongbao
+  redpacketrandom:
     description: Send a random red packet.
     aliases:
       - psqhb
-  koulinghongbao:
+      - pinshouqihongbao
+  redpacketpassword:
     description: Send a password red packet.
     aliases:
       - klhb
-  zhuanshuhongbao:
+      - koulinghongbao
+  redpacketexclusive:
     description: Send a exclusive red packet.
     aliases:
       - zshb
+      - zhuanshuhongbao
 
 permissions:
   fantasticchinesenewyear.*:
@@ -45,15 +56,3 @@ permissions:
     children:
       fantasticchinesenewyear.redpacket.make: true
       fantasticchinesenewyear.redpacket.claim: true
-  fantasticchinesenewyear.redpacket.exclusive:
-    description: Use /zhuanshuhongbao command.
-    default: not op
-  fantasticchinesenewyear.redpacket.normal:
-    description: Use /putonghongbao command.
-    default: not op
-  fantasticchinesenewyear.redpacket.password:
-    description: Use /koulinghongbao command.
-    default: not op
-  fantasticchinesenewyear.redpacket.random:
-    description: Use /pinshouqihongbao command.
-    default: not op
