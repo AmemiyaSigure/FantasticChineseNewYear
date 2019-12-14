@@ -84,7 +84,7 @@ public class Redpackets {
         return redpacketParseds;
     }
 
-    public void sendRedpacketNormalItem(String name, UUID sender, Date expire, ModelItemStack[] modelItemStacks, int amount)
+    public void sendRedpacketNormalItem(String name, UUID sender, long expire, ModelItemStack[] itemStacks, int amount)
             throws SQLException {
         Connection connection = db.getConnection();
         PreparedStatement ps = connection.prepareStatement(
@@ -94,12 +94,13 @@ public class Redpackets {
 
         ps.setString(1, name);
         ps.setString(2, sender.toString());
-        ps.setLong(3, new Date().getTime());
-        ps.setLong(4, expire.getTime());
+        long time = new Date().getTime();
+        ps.setLong(3, time);
+        ps.setLong(4, time + expire * 1000);
         ps.setInt(5, RedPacketType.Normal.ordinal());
         ps.setInt(6, RewardType.Items.ordinal());
         Gson gson = new Gson();
-        ps.setString(7, gson.toJson(modelItemStacks));
+        ps.setString(7, gson.toJson(itemStacks));
         ps.setInt(8, amount);
 
         ps.execute();
@@ -108,7 +109,7 @@ public class Redpackets {
         connection.close();
     }
 
-    public void sendRedpacketNormalMoney(String name, UUID sender, Date expire, double money, int amount)
+    public void sendRedpacketNormalMoney(String name, UUID sender, long expire, double money, int amount)
             throws SQLException {
         Connection connection = db.getConnection();
         PreparedStatement ps = connection.prepareStatement(
@@ -118,8 +119,9 @@ public class Redpackets {
 
         ps.setString(1, name);
         ps.setString(2, sender.toString());
-        ps.setLong(3, new Date().getTime());
-        ps.setLong(4, expire.getTime());
+        long time = new Date().getTime();
+        ps.setLong(3, time);
+        ps.setLong(4, time + expire * 1000);
         ps.setInt(5, RedPacketType.Normal.ordinal());
         ps.setInt(6, RewardType.Money.ordinal());
         ps.setDouble(7, money);
@@ -131,7 +133,7 @@ public class Redpackets {
         connection.close();
     }
 
-    public void sendRedpacketNormalPoints(String name, UUID sender, Date expire, double points, int amount)
+    public void sendRedpacketNormalPoints(String name, UUID sender, long expire, double points, int amount)
             throws SQLException {
         Connection connection = db.getConnection();
         PreparedStatement ps = connection.prepareStatement(
@@ -141,8 +143,9 @@ public class Redpackets {
 
         ps.setString(1, name);
         ps.setString(2, sender.toString());
-        ps.setLong(3, new Date().getTime());
-        ps.setLong(4, expire.getTime());
+        long time = new Date().getTime();
+        ps.setLong(3, time);
+        ps.setLong(4, time + expire * 1000);
         ps.setInt(5, RedPacketType.Normal.ordinal());
         ps.setInt(6, RewardType.Points.ordinal());
         ps.setDouble(7, points);

@@ -3,10 +3,10 @@ package cx.rain.mc.plugin.fantasticChineseNewYear.common.model;
 import java.util.UUID;
 
 public class ModelPlayer {
-    private UUID Uuid;
+    private UUID uuid;
 
     public ModelPlayer(UUID uuid) {
-        Uuid = uuid;
+        this.uuid = uuid;
     }
 
     public static ModelPlayer parse(String uuid) {
@@ -15,10 +15,10 @@ public class ModelPlayer {
     }
 
     public UUID getUuid() {
-        return Uuid;
+        return uuid;
     }
 
     public void setUuid(UUID uuid) {
-        Uuid = uuid;
+        this.uuid = uuid;
     }
 }

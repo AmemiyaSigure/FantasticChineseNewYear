@@ -3,49 +3,49 @@ package cx.rain.mc.plugin.fantasticChineseNewYear.common.model;
 import java.text.SimpleDateFormat;
 
 public class RedpacketClaim {
-    private SimpleDateFormat ClaimTime;
-    private ModelPlayer ClaimPlayer;
-    private ModelItemStack[] ItemStacks;
-    private double Money;
-    private double Points;
+    private SimpleDateFormat claimTime;
+    private ModelPlayer claimPlayer;
+    private ModelItemStack[] items;
+    private double money;
+    private double points;
 
     public SimpleDateFormat getClaimTime() {
-        return ClaimTime;
+        return claimTime;
     }
 
     public void setClaimTime(SimpleDateFormat claimTime) {
-        ClaimTime = claimTime;
+        this.claimTime = claimTime;
     }
 
     public ModelPlayer getClaimPlayer() {
-        return ClaimPlayer;
+        return claimPlayer;
     }
 
     public void setClaimPlayer(ModelPlayer claimPlayer) {
-        this.ClaimPlayer = claimPlayer;
+        this.claimPlayer = claimPlayer;
     }
 
-    public ModelItemStack[] getItemStacks() {
-        return ItemStacks;
+    public ModelItemStack[] getItems() {
+        return items;
     }
 
-    public void setItemStacks(ModelItemStack[] itemStacks) {
-        this.ItemStacks = itemStacks;
+    public void setItems(ModelItemStack[] items) {
+        this.items = items;
     }
 
     public double getMoney() {
-        return Money;
+        return money;
     }
 
     public void setMoney(double money) {
-        Money = money;
+        this.money = money;
     }
 
     public double getPoints() {
-        return Points;
+        return points;
     }
 
     public void setPoints(double points) {
-        Points = points;
+        this.points = points;
     }
 }

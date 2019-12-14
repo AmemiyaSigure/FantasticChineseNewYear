@@ -37,15 +37,15 @@ database:
 # Plugin features settings.
 features:
   # New Year red packet settings.
-  redPacket:
-    # Can players send red packet that only designated people can claim.
-    zhuanshu: true
+  red_packet:
     # Can players send red packet that every receiver can sharing gifts equally.
     putong: true
     # Can players send red packet that receiver should say the password of the red packet as chat message.
     kouling: true
     # Can players send red packet that every receiver can sharing gifts randomly.
     pinshouqi: true
+    # Can players send red packet that only designated people can claim.
+    zhuanshu: true
     # Red packet expire time since be sent.
     # Unit: second.
     expire: 86400

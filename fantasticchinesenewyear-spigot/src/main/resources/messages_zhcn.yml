@@ -24,13 +24,14 @@ permission:
 
 commands:
   error:
-    not_player: "§c这个命令只有玩家使用才有效。"
+    not_enabled: "§c这个功能没有在此服务器启用！"
+    database: "§c数据库连接失败，请联系服务器管理员！"
+    not_player: "§c这个命令只有玩家使用才有效！"
     not_integer: "§c请输入一个整数！"
     not_integer_at: "§c请于第%s个参数中输入一个整数！"
-    database: "§c数据库连接失败，请联系服务器管理员！"
     not_positive: "§c请输入一个正数！"
     not_positive_at: "§c请于第%s个参数中输入一个正数！"
-    cant_divide_equally: "§c不能把物品的数量平分对应的粉数！"
+    cant_divide_equally: "§c不能把物品的数量平分对应的份数！"
 
   # Show on use /redpacket history
   redpacket_history_usage: "§c[新年红包]§b使用 §f/redpacket history [页数] §b查看红包记录。"
@@ -40,12 +41,9 @@ commands:
   redpacket_history_empty: "§c[新年红包]§b你还没有红包记录呢！"
   redpacket_history_page_empty: "§c[新年红包]§b这一页还没有红包记录呢！"
 
-  redpacket: "/redpacket <help|history>"
-  redpacket_history: "/redpacket history [page]"
-
 help:
-  # Show on use /redpacket
   redpackets:
+    # Show on use /redpacket
     redpacket: "§c[新年红包]§b欢迎使用 §d§lFantasticChineseNewYear §b插件！"
     redpacket_2: "§c[新年红包]§b使用 §f/redpacket help §b显示此帮助；"
     redpacket_3: "§c[新年红包]§b使用 §f/redpacket history §b查看发送红包的记录和领取情况；"
@@ -54,6 +52,7 @@ help:
     redpacket_6: "§c[新年红包]§b使用 §f/redpacketpassword (/klhb) §b发送口令红包；"
     redpacket_7: "§c[新年红包]§b使用 §f/redpacketexclusive (/zshb) §b发送专属红包。"
 
+    # Show on use /redpacketnormal
     redpacket_normal_items: "§c[新年红包]§6[普通红包]§f/redpacketnormal item §e<红包名字> <红包数量>"
     redpacket_normal_items_description: "§c[新年红包]§6[普通红包]§b将你§4§l主手上的东西§b包成红包并平均分给每个打开红包的玩家。"
     redpacket_normal_money: "§c[新年红包]§6[普通红包]§f/redpacketnormal money §e<红包名字> <红包数量> <金钱>"

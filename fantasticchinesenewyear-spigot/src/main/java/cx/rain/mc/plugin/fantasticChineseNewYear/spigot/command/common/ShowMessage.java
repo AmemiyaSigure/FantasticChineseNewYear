@@ -4,6 +4,10 @@ import cx.rain.mc.plugin.fantasticChineseNewYear.spigot.util.I18n;
 import org.bukkit.command.CommandSender;
 
 public class ShowMessage {
+    public static void notEnabled(CommandSender sender) {
+        sender.sendMessage(I18n.format("commons.error.not_enabled"));
+    }
+
     public static void noPermission(CommandSender sender) {
         sender.sendMessage(I18n.format("permission.deny"));
     }

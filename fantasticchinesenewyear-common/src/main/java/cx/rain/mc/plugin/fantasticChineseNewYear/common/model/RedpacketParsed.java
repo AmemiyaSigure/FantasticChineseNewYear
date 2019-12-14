@@ -8,19 +8,19 @@ import cx.rain.mc.plugin.fantasticChineseNewYear.common.util.enumerate.RewardTyp
 import java.util.Date;
 
 public class RedpacketParsed {
-    private String Name;
-    private ModelPlayer Sender;
-    private Date SendTime;
-    private Date ExpireTime;
-    private RedPacketType Type;
-    private ModelPlayer ReceiverPlayer;
-    private String Password;
-    private RewardType Reward;
-    private ModelItemStack[] ItemStacks;
-    private double Money;
-    private double Points;
-    private int Amount;
-    private RedpacketClaim[] ClaimPlayersAndRewards;
+    private String name;
+    private ModelPlayer sender;
+    private Date sendTime;
+    private Date expireTime;
+    private RedPacketType type;
+    private ModelPlayer receiverPlayer;
+    private String password;
+    private RewardType reward;
+    private ModelItemStack[] items;
+    private double money;
+    private double points;
+    private int amount;
+    private RedpacketClaim[] claimPlayersAndRewards;
 
     public static RedpacketParsed parse(Redpacket r) {
         // Believe all of the data from database.
@@ -62,106 +62,106 @@ public class RedpacketParsed {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public ModelPlayer getSender() {
-        return Sender;
+        return sender;
     }
 
     public void setSender(ModelPlayer sender) {
-        Sender = sender;
+        this.sender = sender;
     }
 
     public Date getSendTime() {
-        return SendTime;
+        return sendTime;
     }
 
     public void setSendTime(Date sendTime) {
-        SendTime = sendTime;
+        this.sendTime = sendTime;
     }
 
     public Date getExpireTime() {
-        return ExpireTime;
+        return expireTime;
     }
 
     public void setExpireTime(Date expireTime) {
-        ExpireTime = expireTime;
+        this.expireTime = expireTime;
     }
 
     public RedPacketType getType() {
-        return Type;
+        return type;
     }
 
     public void setType(RedPacketType type) {
-        Type = type;
+        this.type = type;
     }
 
     public RewardType getReward() {
-        return Reward;
+        return reward;
     }
 
     public void setReward(RewardType reward) {
-        Reward = reward;
+        this.reward = reward;
     }
 
     public ModelItemStack[] getItemStacks() {
-        return ItemStacks;
+        return items;
     }
 
     public void setItemStacks(ModelItemStack[] itemStacks) {
-        this.ItemStacks = itemStacks;
+        this.items = itemStacks;
     }
 
     public double getMoney() {
-        return Money;
+        return money;
     }
 
     public void setMoney(double money) {
-        Money = money;
+        this.money = money;
     }
 
     public double getPoints() {
-        return Points;
+        return points;
     }
 
     public void setPoints(double points) {
-        Points = points;
+        this.points = points;
     }
 
     public int getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(int amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 
     public ModelPlayer getReceiverPlayer() {
-        return ReceiverPlayer;
+        return receiverPlayer;
     }
 
     public void setReceiverPlayer(ModelPlayer receiverPlayer) {
-        this.ReceiverPlayer = receiverPlayer;
+        this.receiverPlayer = receiverPlayer;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public RedpacketClaim[] getClaimPlayersAndRewards() {
-        return ClaimPlayersAndRewards;
+        return claimPlayersAndRewards;
     }
 
     public void setClaimPlayersAndRewards(RedpacketClaim[] claimPlayersAndRewards) {
-        ClaimPlayersAndRewards = claimPlayersAndRewards;
+        this.claimPlayersAndRewards = claimPlayersAndRewards;
     }
 }
