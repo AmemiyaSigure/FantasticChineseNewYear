@@ -24,6 +24,14 @@ public class ShowMessage {
         sender.sendMessage(I18n.format("commands.error.not_integer_at", at));
     }
 
+    public static void notDouble(CommandSender sender) {
+        sender.sendMessage(I18n.format("commands.error.not_double"));
+    }
+
+    public static void notDoubleAt(CommandSender sender, int at) {
+        sender.sendMessage(I18n.format("commands.error.not_double_at", at));
+    }
+
     public static void notPositive(CommandSender sender) {
         sender.sendMessage(I18n.format("commands.error.not_positive"));
     }

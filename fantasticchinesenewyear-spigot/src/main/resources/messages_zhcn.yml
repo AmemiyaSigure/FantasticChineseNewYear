@@ -29,6 +29,8 @@ commands:
     not_player: "§c这个命令只有玩家使用才有效！"
     not_integer: "§c请输入一个整数！"
     not_integer_at: "§c请于第%s个参数中输入一个整数！"
+    not_double: "§c请输入一个整数或小数！"
+    not_double_at: "§c请于第%s个参数中输入一个整数或小数！"
     not_positive: "§c请输入一个正数！"
     not_positive_at: "§c请于第%s个参数中输入一个正数！"
     cant_divide_equally: "§c不能把物品的数量平分对应的份数！"

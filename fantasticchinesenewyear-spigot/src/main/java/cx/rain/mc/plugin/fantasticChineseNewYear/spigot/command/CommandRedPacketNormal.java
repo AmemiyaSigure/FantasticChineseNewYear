@@ -47,6 +47,11 @@ public class CommandRedPacketNormal implements CommandExecutor {
             switch (args[0]) {
                 case "item":
                     if (args.length == 3) {
+                        if (!(sender instanceof Player)) {
+                            ShowMessage.notPlayer(sender);
+                            return true;
+                        }
+
                         int amount = -1;
                         try {
                             amount = Integer.parseInt(args[2]);
@@ -57,11 +62,6 @@ public class CommandRedPacketNormal implements CommandExecutor {
 
                         if (amount <= 0) {
                             ShowMessage.notPositiveAt(sender, 3);
-                            return true;
-                        }
-
-                        if (!(sender instanceof Player)) {
-                            ShowMessage.notPlayer(sender);
                             return true;
                         }
 
@@ -85,16 +85,111 @@ public class CommandRedPacketNormal implements CommandExecutor {
                             log.severe(I18n.format("exception.database"));
                             ex.printStackTrace();
                         }
-
                     } else {
                         showUsageItem(sender);
                     }
                     break;
                 case "money":
+                    if (args.length == 4) {
+                        if (!(sender instanceof Player)) {
+                            ShowMessage.notPlayer(sender);
+                            return true;
+                        }
 
+                        int amount = -1;
+                        try {
+                            amount = Integer.parseInt(args[2]);
+                        } catch (NumberFormatException ignored) {
+                            ShowMessage.notIntegerAt(sender, 3);
+                            return true;
+                        }
+
+                        if (amount <= 0) {
+                            ShowMessage.notPositiveAt(sender, 3);
+                            return true;
+                        }
+
+                        double money = -1;
+                        try {
+                            money = Double.parseDouble(args[3]);
+                        } catch (NumberFormatException ignored) {
+                            ShowMessage.notDoubleAt(sender, 4);
+                            return true;
+                        }
+
+                        if (money <= 0) {
+                            ShowMessage.notPositiveAt(sender, 4);
+                            return true;
+                        }
+
+                        if (money % amount != 0) {
+                            ShowMessage.cantDivideEqually(sender);
+                            return true;
+                        }
+
+                        Redpackets redpackets = new Redpackets(db);
+                        try {
+                            redpackets.sendRedpacketNormalMoney(args[1], ((Player) sender).getUniqueId(),
+                                    expire, money, amount);
+                        } catch (SQLException ex) {
+                            sender.sendMessage(I18n.format("commands.error.database"));
+                            log.severe(I18n.format("exception.database"));
+                            ex.printStackTrace();
+                        }
+                    } else {
+                        showUsageMoney(sender);
+                    }
                     break;
                 case "points":
+                    if (args.length == 4) {
+                        if (!(sender instanceof Player)) {
+                            ShowMessage.notPlayer(sender);
+                            return true;
+                        }
 
+                        int amount = -1;
+                        try {
+                            amount = Integer.parseInt(args[2]);
+                        } catch (NumberFormatException ignored) {
+                            ShowMessage.notIntegerAt(sender, 3);
+                            return true;
+                        }
+
+                        if (amount <= 0) {
+                            ShowMessage.notPositiveAt(sender, 3);
+                            return true;
+                        }
+
+                        double points = -1;
+                        try {
+                            points = Double.parseDouble(args[3]);
+                        } catch (NumberFormatException ignored) {
+                            ShowMessage.notDoubleAt(sender, 4);
+                            return true;
+                        }
+
+                        if (points <= 0) {
+                            ShowMessage.notPositiveAt(sender, 4);
+                            return true;
+                        }
+
+                        if (points % amount != 0) {
+                            ShowMessage.cantDivideEqually(sender);
+                            return true;
+                        }
+
+                        Redpackets redpackets = new Redpackets(db);
+                        try {
+                            redpackets.sendRedpacketNormalPoints(args[1], ((Player) sender).getUniqueId(),
+                                    expire, points, amount);
+                        } catch (SQLException ex) {
+                            sender.sendMessage(I18n.format("commands.error.database"));
+                            log.severe(I18n.format("exception.database"));
+                            ex.printStackTrace();
+                        }
+                    } else {
+                        showUsagePoints(sender);
+                    }
                     break;
                 default:
                     showUsage(sender);
