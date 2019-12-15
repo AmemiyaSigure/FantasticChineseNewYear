@@ -8,10 +8,6 @@ buildscript {
     }
 }
 
-repositories {
-    jcenter()
-}
-
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
@@ -19,6 +15,7 @@ dependencies {
     compile project(':fantasticchinesenewyear-common')
     compile project(':fantasticchinesenewyear-spigot')
     compile project(':fantasticchinesenewyear-sponge')
+    compile project(':fantasticchinesenewyear-bungeecord')
 }
 
 subprojects {

@@ -1,68 +1,12 @@
 life_circle:
+  check_environment: "检测运行环境 —— %s %s"
   load_config: "正在加载配置文件……"
   save_config: "正在保存配置文件……"
-  load_database: "正在连接数据库……"
-  test_database: "正在测试数据库连接……"
-  init_database: "正在初始化数据库……"
   load_listeners: "正在注册监听器……"
   load_commands: "正在注册指令……"
-  close_database: "正在关闭数据库连接……"
-
-exception:
-  test_database: "测试数据库连接失败！"
-  init_database: "初始化数据库失败！"
-  database: "数据库连接失败！"
 
 languages:
   set: "语言已设置为：%s！"
   chinese_simplified: "简体中文"
   english: "英文"
   missing: "在语言文件中没有找到 %s 这个键！这可能手动编辑语言文件导致的，语言文件已重置。"
-
-permission:
-  deny: "§c你没有执行该命令的权限！"
-
-commands:
-  error:
-    not_enabled: "§c这个功能没有在此服务器启用！"
-    database: "§c数据库连接失败，请联系服务器管理员！"
-    not_player: "§c这个命令只有玩家使用才有效！"
-    not_integer: "§c请输入一个整数！"
-    not_integer_at: "§c请于第%s个参数中输入一个整数！"
-    not_double: "§c请输入一个整数或小数！"
-    not_double_at: "§c请于第%s个参数中输入一个整数或小数！"
-    not_positive: "§c请输入一个正数！"
-    not_positive_at: "§c请于第%s个参数中输入一个正数！"
-    cant_divide_equally: "§c不能把物品的数量平分对应的份数！"
-
-  # Show on use /redpacket history
-  redpacket_history_usage: "§c[新年红包]§b使用 §f/redpacket history [页数] §b查看红包记录。"
-  redpacket_history_head: "§c[新年红包]§b----------以下是红包历史 [%s/%s]----------"
-  redpacket_history_body: "§c[新年红包]§r红包名称：%s|发送时间：%s|发送份数：%s|领取份数：%s"
-  redpacket_history_foot: "§c[新年红包]§b----------以上是红包历史 [%s/%s]----------"
-  redpacket_history_empty: "§c[新年红包]§b你还没有红包记录呢！"
-  redpacket_history_page_empty: "§c[新年红包]§b这一页还没有红包记录呢！"
-
-help:
-  redpackets:
-    # Show on use /redpacket
-    redpacket: "§c[新年红包]§b欢迎使用 §d§lFantasticChineseNewYear §b插件！"
-    redpacket_2: "§c[新年红包]§b使用 §f/redpacket help §b显示此帮助；"
-    redpacket_3: "§c[新年红包]§b使用 §f/redpacket history §b查看发送红包的记录和领取情况；"
-    redpacket_4: "§c[新年红包]§b使用 §f/redpacketnormal (/pthb) §b发送普通红包；"
-    redpacket_5: "§c[新年红包]§b使用 §f/redpacketrandom (/psqhb) §b发送拼手气红包；"
-    redpacket_6: "§c[新年红包]§b使用 §f/redpacketpassword (/klhb) §b发送口令红包；"
-    redpacket_7: "§c[新年红包]§b使用 §f/redpacketexclusive (/zshb) §b发送专属红包。"
-
-    # Show on use /redpacketnormal
-    redpacket_normal_items: "§c[新年红包]§6[普通红包]§f/redpacketnormal item §e<红包名字> <红包数量>"
-    redpacket_normal_items_description: "§c[新年红包]§6[普通红包]§b将你§4§l主手上的东西§b包成红包并平均分给每个打开红包的玩家。"
-    redpacket_normal_money: "§c[新年红包]§6[普通红包]§f/redpacketnormal money §e<红包名字> <红包数量> <金钱>"
-    redpacket_normal_money_description: "§c[新年红包]§6[普通红包]§b把§4§l金钱§b包成红包并平均分给每个打开红包的玩家。"
-    redpacket_normal_points: "§c[新年红包]§6[普通红包]§f/redpacketnormal points §e<红包名字> <红包数量> <点券>"
-    redpacket_normal_points_description: "§c[新年红包]§6[普通红包]§b把§4§l点券§b包成红包并平均分给每个打开红包的玩家。"
-
-    redpacket_random: "§c[新年红包]§6[拼手气红包]§f/redpacketrandom §e<item|money|points> <红包名字> <红包数量> <红包中§c§l总计含有§e的金钱|点券>"
-    redpacket_password: "§c[新年红包]§6[口令红包]§f/redpacketpassword §e<item|money|points> <红包口令> <红包数量> <红包中§c§l总计含有§e的金钱|点券>"
-    redpacket_exclusive: "§c[新年红包]§6[专属红包]§f/redpacketexclusive §e<item|money|points> <红包名字> <领取玩家> <红包中的金钱|点券>"
-

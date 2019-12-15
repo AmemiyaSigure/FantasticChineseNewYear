@@ -1,2 +1,2 @@
-# FantasticChineseNewYear
-A Minecraft Bukkit Server Plugin with theme of Chinese New Year.
+# Fantastic Chinese New Year
+A Minecraft Server Plugin with theme of Chinese New Year.

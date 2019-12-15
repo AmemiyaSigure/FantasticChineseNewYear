@@ -1,0 +1,4 @@
+name: FantasticChineseNewYear
+version: @version@
+main: cx.rain.mc.plugin.fantasticchinesenewyear.bungeecord.FantasticChineseNewYearBungeeCord
+description: A Minecraft Server Plugin with theme of Chinese New Year.

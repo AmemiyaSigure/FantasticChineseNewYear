@@ -1,6 +1,6 @@
-package cx.rain.mc.plugin.fantasticChineseNewYear.spigot.util.enumerate;
+package cx.rain.mc.plugin.fantasticchinesenewyear.spigot.util.enumerate;
 
-public enum Language {
+public enum  Language {
     zhcn("languages.chinese_simplified", "messages_zhcn.yml"),
     en("languages.english", "messages_en.yml");
 

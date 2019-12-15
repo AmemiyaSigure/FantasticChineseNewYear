@@ -1,58 +1,9 @@
 name: FantasticChineseNewYear
 version: ${version}
-main: cx.rain.mc.plugin.fantasticChineseNewYear.spigot.FantasticChineseNewYearSpigot
+main: cx.rain.mc.plugin.fantasticchinesenewyear.spigot.FantasticChineseNewYearSpigot
+api-version: 1.13
 prefix: FantasticChineseNewYear
 load: STARTUP
-softdepend:
-  - PlayerPoints
+softdepend: [Vault]
 authors: [AmemiyaSigure]
-description: A Minecraft Bukkit Server Plugin with theme of Chinese New Year.
-api-version: 1.13
-
-commands:
-  fantasticchinesenewyear:
-    description: Fantastic Chinese New Year Admin Command.
-    aliases:
-      - fcny
-  redpacket:
-    description: Manage sent red packet.
-    aliases:
-      - rp
-      - hb
-      - fhb
-  redpacketclaim:
-    description: Claim a red packet.
-    aliases:
-      - rpclaim
-      - lhb
-  redpacketnormal:
-    description: Send a normal red packet.
-    aliases:
-      - pthb
-      - putonghongbao
-  redpacketrandom:
-    description: Send a random red packet.
-    aliases:
-      - psqhb
-      - pinshouqihongbao
-  redpacketpassword:
-    description: Send a password red packet.
-    aliases:
-      - klhb
-      - koulinghongbao
-  redpacketexclusive:
-    description: Send a exclusive red packet.
-    aliases:
-      - zshb
-      - zhuanshuhongbao
-
-permissions:
-  fantasticchinesenewyear.*:
-    description: Use all of this plugin command.
-    default: op
-  fantasticchinesenewyear.redpacket.use:
-    description: Use /redpacket command.
-    default: not op
-    children:
-      fantasticchinesenewyear.redpacket.make: true
-      fantasticchinesenewyear.redpacket.claim: true
+description: A Minecraft Server Plugin with theme of Chinese New Year.

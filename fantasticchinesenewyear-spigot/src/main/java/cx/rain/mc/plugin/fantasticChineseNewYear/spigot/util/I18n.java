@@ -1,7 +1,7 @@
-package cx.rain.mc.plugin.fantasticChineseNewYear.spigot.util;
+package cx.rain.mc.plugin.fantasticchinesenewyear.spigot.util;
 
-import cx.rain.mc.plugin.fantasticChineseNewYear.spigot.FantasticChineseNewYearSpigot;
-import cx.rain.mc.plugin.fantasticChineseNewYear.spigot.util.enumerate.Language;
+import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.FantasticChineseNewYearSpigot;
+import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.util.enumerate.Language;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 

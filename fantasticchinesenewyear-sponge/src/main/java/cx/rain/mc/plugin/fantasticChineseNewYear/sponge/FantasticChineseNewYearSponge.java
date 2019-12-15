@@ -1,27 +1,25 @@
-package cx.rain.mc.plugin.fantasticChineseNewYear.sponge;
+package cx.rain.mc.plugin.fantasticchinesenewyear.sponge;
 
 import com.google.inject.Inject;
+import cx.rain.mc.plugin.fantasticchinesenewyear.common.FantasticChineseNewYear;
 import org.slf4j.Logger;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.plugin.Plugin;
 
-import static cx.rain.mc.plugin.fantasticChineseNewYear.common.FantasticChineseNewYear.*;
-
 @Plugin(
-        id = PLUGIN_ID,
-        name = PLUGIN_NAME,
-        description = PLUGIN_DESCRIPTION,
+        id = FantasticChineseNewYear.PLUGIN_ID,
+        name = FantasticChineseNewYear.PLUGIN_NAME,
+        description = FantasticChineseNewYear.PLUGIN_DESCRIPTION,
         authors = {
-                PLUGIN_AUTHOR
+                FantasticChineseNewYear.PLUGIN_AUTHOR
         }
 )
 public class FantasticChineseNewYearSponge {
     @Inject
-    private Logger log;
+    private Logger logger;
 
     @Listener
     public void onServerStart(GameStartedServerEvent event) {
-        log.info("[Fantastic Chinese New Year] Plugin enabled.");
     }
 }
