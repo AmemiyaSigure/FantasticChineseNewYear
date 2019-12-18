@@ -21,5 +21,6 @@ public class FantasticChineseNewYearSponge {
 
     @Listener
     public void onServerStart(GameStartedServerEvent event) {
+
     }
 }

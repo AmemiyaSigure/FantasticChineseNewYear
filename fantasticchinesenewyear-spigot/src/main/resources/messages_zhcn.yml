@@ -1,9 +1,11 @@
 life_circle:
   check_environment: "检测运行环境 —— %s %s"
+  debug_enabled: "已开启调试模式！"
   load_config: "正在加载配置文件……"
   save_config: "正在保存配置文件……"
   load_listeners: "正在注册监听器……"
   load_commands: "正在注册指令……"
+  load_structures: "正在注册多方块结构……"
 
 languages:
   set: "语言已设置为：%s！"

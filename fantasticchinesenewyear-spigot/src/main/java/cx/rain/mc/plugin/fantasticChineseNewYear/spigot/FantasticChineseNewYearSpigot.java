@@ -16,6 +16,7 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
     private FileConfiguration config = null;
     private FileConfiguration messages = null;
     private boolean hasLoad = false;
+    private boolean isDebug = false;
 
     @Override
     public void onEnable() {
@@ -36,6 +37,7 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         new Commands();
         log.info(I18n.format("life_circle.load_listeners"));
         new Listeners();
+        log.info(I18n.format("life_circle.load_structures"));
     }
 
     private void loadConfigs() {
@@ -44,11 +46,15 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         config = this.getConfig();
         I18n.loadMessages(config.getString("general.language"));
         log.info(I18n.format("life_circle.load_config"));
+        isDebug = config.getBoolean("general.debug");
     }
 
     private void checkEnv() {
         log.info(I18n.format("life_circle.check_environment",
                 Bukkit.getServer().getName(), Bukkit.getBukkitVersion()));
+        if (isDebug) {
+            log.info(I18n.format("life_circle.debug_enabled"));
+        }
     }
 
     @Override

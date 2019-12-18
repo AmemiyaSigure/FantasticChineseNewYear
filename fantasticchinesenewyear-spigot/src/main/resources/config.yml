@@ -1,0 +1,32 @@
+# Plugin general settings.
+general:
+  # Weather plugin shows debug info. Such as exception stacktrace.
+  debug: false
+  # Which language that plugin used in console and game.
+  # Accept: en, zhcn
+  # Default: zhcn
+  # If you can translate it into more languages, i'd love to see a git pull request in
+  # https://github.com/AmemiyaSigure/FantasticChineseNewYear
+  language: "zhcn"
+
+# Plugin features settings.
+futures:
+  # New year call settings.
+  new_year_call:
+    # Enable new year call.
+    enabled: true
+
+  # Dumplings-making settings.
+  dumplings:
+    # Can player build a multi-block structure to making powder.
+    # Otherwise, player will make wheat flour on working table.
+    powder_machine: true
+
+  # KongMing Lantern settings.
+  kong_ming_lantern:
+    # Can players build a multi-block structure that be a KongMing Lantern.
+    multi_block: true
+    # Can player become a Kong Ming Lantern and fly to the sky.
+    player: true
+    # Can players fly a Kong Ming Lantern at night only.
+    only_night: true
