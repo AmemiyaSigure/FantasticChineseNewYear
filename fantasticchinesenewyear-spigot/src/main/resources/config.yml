@@ -17,10 +17,7 @@ futures:
     enabled: true
 
   # Dumplings-making settings.
-  dumplings:
-    # Can player build a multi-block structure to making powder.
-    # Otherwise, player will make wheat flour on working table.
-    powder_machine: true
+  dumplings: false
 
   # KongMing Lantern settings.
   kong_ming_lantern:

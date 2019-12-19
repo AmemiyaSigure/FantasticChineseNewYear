@@ -10,6 +10,9 @@ public class Listeners {
         PluginManager pm = plugin.getServer().getPluginManager();
 
         pm.registerEvents(new ListenerBlockPlace(), plugin);
+        pm.registerEvents(new ListenerBlockBreak(), plugin);
         pm.registerEvents(new ListenerPlayerInteract(), plugin);
+        pm.registerEvents(new ListenerWorldLoad(), plugin);
+        pm.registerEvents(new ListenerPrepareItemCraft(), plugin);
     }
 }

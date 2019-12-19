@@ -5,10 +5,18 @@ life_circle:
   save_config: "正在保存配置文件……"
   load_listeners: "正在注册监听器……"
   load_commands: "正在注册指令……"
-  load_structures: "正在注册多方块结构……"
+  load_crafting: "正在加载合成配方……"
 
 languages:
   set: "语言已设置为：%s！"
   chinese_simplified: "简体中文"
   english: "英文"
   missing: "在语言文件中没有找到 %s 这个键！这可能手动编辑语言文件导致的，语言文件已重置。"
+
+item:
+  wheat_flour:
+    name: "§e小麦粉"
+    lore: "§7把我做成蛋糕吧，或者烤成面包。"
+  dough:
+    name: "§e面团"
+    lore: "§7我是许多食物的原料。"

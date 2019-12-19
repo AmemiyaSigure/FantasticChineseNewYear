@@ -1,6 +1,7 @@
 package cx.rain.mc.plugin.fantasticchinesenewyear.spigot;
 
 import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.command.Commands;
+import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.crafting.Recipes;
 import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.listener.Listeners;
 import cx.rain.mc.plugin.fantasticchinesenewyear.spigot.util.I18n;
 import org.bukkit.Bukkit;
@@ -37,7 +38,6 @@ public final class FantasticChineseNewYearSpigot extends JavaPlugin {
         new Commands();
         log.info(I18n.format("life_circle.load_listeners"));
         new Listeners();
-        log.info(I18n.format("life_circle.load_structures"));
     }
 
     private void loadConfigs() {

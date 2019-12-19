@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     compile project(':fantasticchinesenewyear-common')
-    compileOnly 'org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.13-R0.1-SNAPSHOT'
 }
 
 processResources {
